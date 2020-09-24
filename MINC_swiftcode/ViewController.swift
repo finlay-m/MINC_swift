@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sumLabel: UILabel!
     @IBOutlet weak var addTextfield: UITextField!
     
-    // can also say var thesum : Int = 0
+    // can also say var thesum : Int = nil to be clear it is nil (or could add a value like = 0)
     var thesum : Int?
     
     override func viewDidLoad() {
@@ -26,7 +26,21 @@ class ViewController: UIViewController {
 
     @IBAction func addtoSum(_ sender: Any) {
 
-        // optional upwrapping, tells the compiler to try do to this,
+        guard let numberToAdd = Int(addTextfield.text!) else {
+            print("DÅLIG INMATNING")
+            return // to throw is short for throw an error
+        }
+        
+        if(thesum == nil) // this has to happen before you promise thesum!
+        {
+            thesum = 0
+        }
+        thesum = thesum! + numberToAdd // this is a variable that exists outside of the
+        paintLayout()
+        
+        /*
+        // optional upwrapping, tells the compiler to try do to this
+        // addNumber is only accessible within the if statement
         if let addNumber = Int(addTextfield.text!) {
             
             if(thesum == nil) // this has to happen before you promise thesum!
@@ -42,21 +56,9 @@ class ViewController: UIViewController {
             print("FELAKTIG INMATNING")
             // return
         }
-        
-        addTextfield.text = ""
-        
-        
-        // WRONG WAY 1: the ! promises a value, this is terrible code practice: thesum = thesum! + Int(addTextfield.text!)!
-        // WRONG WAY 2: the problem with this text is you will get error if you push button when text field is blank: var numberToAdd = Int(addTextfield.text!)!
-        /* WRONG WAY 3: (all this is covered by the if let phrase above)
-        var numberToAdd = Int(addTextfield.text!) // we got rid of the second !
-        if(numberToAdd == nil){
-            print("FELAKTIG INMATNING")
-            return // this ends the addtoSum function and prevent crashing error
-        }
-        thesum = thesum! + numberToAdd!
         */
         
+        addTextfield.text = ""
     
     }
     

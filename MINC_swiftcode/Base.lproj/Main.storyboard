@@ -34,23 +34,23 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-n2-fZf">
-                                <rect key="frame" x="157" y="143" width="100" height="50"/>
+                                <rect key="frame" x="132" y="143" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="FLI-Vl-KLH"/>
+                                    <constraint firstAttribute="width" constant="150" id="FLI-Vl-KLH"/>
                                     <constraint firstAttribute="height" constant="50" id="uc9-qa-lTu"/>
                                 </constraints>
-                                <state key="normal" title="Add"/>
+                                <state key="normal" title="Add / Addera"/>
                                 <connections>
                                     <action selector="addtoSum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cSM-yL-OSf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl0-ku-dM2">
-                                <rect key="frame" x="157" y="213" width="100" height="50"/>
+                                <rect key="frame" x="132" y="213" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="w1n-6Q-gVd"/>
+                                    <constraint firstAttribute="width" constant="150" id="w1n-6Q-gVd"/>
                                     <constraint firstAttribute="height" constant="50" id="yAq-6n-AFW"/>
                                 </constraints>
-                                <state key="normal" title="Clear"/>
+                                <state key="normal" title="Clear / Nollställ"/>
                                 <connections>
                                     <action selector="resetSum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ecd-9p-LQf"/>
                                 </connections>
