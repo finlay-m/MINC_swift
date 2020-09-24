@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        sumLabel.text = "Skriv in siffra"
+        paintLayout()
         
     }
 
@@ -36,17 +36,14 @@ class ViewController: UIViewController {
             
             // so if Int(addTextfield.text! is possible aka not nil, then it's value is assigned to addNumber and the function runs
             thesum = thesum! + addNumber
-            sumLabel.text = String(thesum!)
+            paintLayout()
             
         } else {
             print("FELAKTIG INMATNING")
             // return
         }
         
-       
-        
         addTextfield.text = ""
-        
         
         
         // WRONG WAY 1: the ! promises a value, this is terrible code practice: thesum = thesum! + Int(addTextfield.text!)!
@@ -63,12 +60,19 @@ class ViewController: UIViewController {
     
     }
     
-    
     @IBAction func resetSum(_ sender: Any) {
-        thesum = 0
-        sumLabel.text = "Skriv i siffra"
+        thesum = nil
+        paintLayout()
     }
     
+    func paintLayout()
+    {
+        if (thesum == nil){
+        sumLabel.text = "Skriv i siffra"
+        } else {
+            sumLabel.text = String(thesum!)
+        }
+    }
     
 }
 
